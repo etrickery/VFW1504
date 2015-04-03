@@ -1,0 +1,44 @@
+//Eric Pfister
+//Quote Viewer app
+//
+
+Ti.UI.setBackground('#000');
+
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: '#fff',
+	backgroundImage: 'pattern.png',
+	backgroundRepeat: true,
+	title: 'My first window'
+	
+});
+
+var quoteView = Ti.UI.createView({	
+	backgroundColor: '#333',
+	borderRadius: 5,
+	borderWidth: 1,
+	borderColor: '#fff',
+	top: 20,
+	height: '70%',
+	width: '90%',
+	id: 'QuoteBox'
+});
+
+var quoteNav = Ti.UI.createView({
+	backgroundColor: '#333',
+	borderRadius: 5,
+	borderWidth: 1,
+	borderColor: '#fff',
+	top: '80%',
+	height: '10%',
+	width: '90%',
+	id: 'NavBox'
+});
+
+
+mainWindow.add(quoteNav);
+mainWindow.add(quoteView);
+mainWindow.open();
+
+
+

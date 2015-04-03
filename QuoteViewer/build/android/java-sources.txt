@@ -1,0 +1,7 @@
+"/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/build/android/gen/android/support/v7/appcompat/R.java"
+"/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/build/android/gen/com/somefivemonkeys/QuoteViewer/ApplicationStylesheet.java"
+"/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/build/android/gen/com/somefivemonkeys/QuoteViewer/QuoteviewerActivity.java"
+"/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/build/android/gen/com/somefivemonkeys/QuoteViewer/QuoteviewerAppInfo.java"
+"/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/build/android/gen/com/somefivemonkeys/QuoteViewer/QuoteviewerApplication.java"
+"/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/build/android/gen/com/somefivemonkeys/QuoteViewer/R.java"
+"/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/build/android/gen/ti/modules/titanium/ui/R.java"
