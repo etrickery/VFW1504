@@ -35,26 +35,8 @@ var quoteNav = Ti.UI.createView({
 	id: 'NavBox'
 });
 
-var quoteText = Ti.UI.createLabel({
-	text: 'Quote test',
-	color: '#fff',
-	font: {
-		fontSize: 22, 
-		fontFamily: 'Baskerville', 
-		fontWeight: 'Bold',
-		fontStyle: 'italic'
-	},
-	top: '5%',
-	left: '5%',
-	right: '5%'
-	
-	
-});
 
 
-
-
-quoteView.add(quoteText);
 mainWindow.add(quoteNav);
 mainWindow.add(quoteView);
 mainWindow.open();

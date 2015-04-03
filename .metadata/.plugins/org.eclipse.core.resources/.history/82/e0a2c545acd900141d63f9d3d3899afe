@@ -39,14 +39,13 @@ var quoteText = Ti.UI.createLabel({
 	text: 'Quote test',
 	color: '#fff',
 	font: {
-		fontSize: 22, 
+		fontSize: 12, 
 		fontFamily: 'Baskerville', 
-		fontWeight: 'Bold',
 		fontStyle: 'italic'
 	},
-	top: '5%',
-	left: '5%',
-	right: '5%'
+	top: '12%',
+	left: '12%',
+	right: '12%'
 	
 	
 });
@@ -54,7 +53,7 @@ var quoteText = Ti.UI.createLabel({
 
 
 
-quoteView.add(quoteText);
+
 mainWindow.add(quoteNav);
 mainWindow.add(quoteView);
 mainWindow.open();
