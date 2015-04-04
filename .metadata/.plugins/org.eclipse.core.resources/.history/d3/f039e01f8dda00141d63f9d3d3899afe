@@ -101,16 +101,13 @@ var next = Ti.UI.createLabel({
 	
 });
 
-var quoteContent;
-var loadContent = require(content.js);
+//var loadContent = require(content.js);
 
 
 mainWindow.open();
 mainWindow.add(titleBar, quoteView, prevQuoteNav, nextQuoteNav);
-quoteView.add(quoteContent);
 prevQuoteNav.add(prev);
 nextQuoteNav.add(next);
 titleBar.add(titleText);
-
 
 

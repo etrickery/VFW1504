@@ -6,10 +6,9 @@ var quoteContent = Ti.UI.createLabel({
 		fontFamily: 'Helvetica', 
 		fontStyle: 'Italic'
 	},
-	top: '5',
-	left: '5',
-	right: '5',
-	align: 'left'	
+	top: '1',
+	align: 'right',
+	right: '5%'	
 	
 });
 
