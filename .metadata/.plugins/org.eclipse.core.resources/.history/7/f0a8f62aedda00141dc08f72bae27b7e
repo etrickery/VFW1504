@@ -1,0 +1,64 @@
+var quoteList = 
+	["Say what you mean, mean what you say, and don't say it mean. - unknown", 
+	"Don't cry because it's over, smile because it happened. - Dr.Suess", 
+	"Be yourself; everyone else is already taken. - Oscar Wilde", 
+	"Two things are infinite: the universe and human stupidity; and I'm not sure about the Universe - Albert Einstein",
+	"Be the change that you wish to see in the world - Mahatma Gandhi"];
+	
+var displayQuote = function(){
+	quoteView.hide();
+	quoteView = null;
+	//Draw quote window
+	quoteView = Ti.UI.createView({
+		backgroundColor: '#888',
+		borderRadius: 5,
+		borderWidth: 1,
+		borderColor: '#fff',
+		top: '10%',
+		height: '80%',
+		width: '90%'
+	});
+
+	//quote text
+	quoteText = Ti.UI.createLabel({
+		color: '#fff',
+		font: {
+			fontSize: 30, 
+			fontFamily: 'Helvetica'
+		},
+		top: '5',
+		left: '5',
+		right: '5',
+		align: 'left',
+		text: quoteContent
+	});
+	mainWindow.add(quoteView);
+	quoteView.add(quoteText);
+};
+
+
+
+var nextQuote = function(){
+	q = q++;
+	if (q >= quoteList.length) {
+		q = 0;
+	};
+	quoteContent = quoteList[q];
+	displayQuote;
+};
+	
+
+
+var prevQuote = function(){
+	q = q--;
+	if (q < 0) {
+		q = quoteList.length;
+	};
+	quoteContent = quoteList[q];
+	diplayQuote;
+};
+
+//Event Listeners
+nextQuoteNav.addEventListener("click", nextQuote, false);
+prevQuoteNav.addEventListener("click", prevQuote, false);
+

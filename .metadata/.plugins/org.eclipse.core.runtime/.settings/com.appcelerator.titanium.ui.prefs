@@ -5,3 +5,5 @@ QuoteViewer\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.l
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103
+stolen\:launchMode=run
+stolen\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.EE572683-0E34-41CB-8288-F0D3560A7522

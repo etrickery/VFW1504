@@ -1,0 +1,38 @@
+var quoteList = 
+	["Say what you mean, mean what you say, and don't say it mean. - unknown", 
+	"Don't cry because it's over, smile because it happened. - Dr.Suess", 
+	"Be yourself; everyone else is already taken. - Oscar Wilde", 
+	"Two things are infinite: the universe and human stupidity; and I'm not sure about the Universe - Albert Einstein",
+	"Be the change that you wish to see in the world - Mahatma Gandhi"];
+
+	
+
+
+
+
+var nextQuote = function(q, quoteContent){
+	quoteText.text = quoteList[q];
+	quoteView.add(quoteText);	
+	q = q++;
+	console.log(quoteList[q]);	//null
+	console.log(q);					//nan
+	console.log(quoteList.length); //5
+	console.log(auoteText);
+	
+};
+	
+
+
+var prevQuote = function(){
+	//quoteView.hide();
+	var q = q--;
+	if (q < 0) {
+		q = quoteList.length;
+	};
+	quoteText.text = quoteList[q];
+};
+
+//Event Listeners
+nextQuoteNav.addEventListener("click", nextQuote);
+prevQuoteNav.addEventListener("click", prevQuote);
+

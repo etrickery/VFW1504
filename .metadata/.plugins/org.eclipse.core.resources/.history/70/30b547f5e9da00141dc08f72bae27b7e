@@ -1,0 +1,86 @@
+var quoteList = 
+	["Say what you mean, mean what you say, and don't say it mean. - unknown", 
+	"Don't cry because it's over, smile because it happened. - Dr.Suess", 
+	"Be yourself; everyone else is already taken. - Oscar Wilde", 
+	"Two things are infinite: the universe and human stupidity; and I'm not sure about the Universe - Albert Einstein",
+	"Be the change that you wish to see in the world - Mahatma Gandhi"];
+
+var q = 3;	
+
+var nextQuote = function(){
+	if (q = quoteList.length) {
+		q = 0;
+	} else {
+		q = q++;
+	};
+	quoteView.hide();
+	quoteView = null;
+	//Draw quote window
+	quoteView = Ti.UI.createView({
+		backgroundColor: '#888',
+		borderRadius: 5,
+		borderWidth: 1,
+		borderColor: '#fff',
+		top: '10%',
+		height: '80%',
+		width: '90%'
+	});
+
+	//quote text
+	var quoteText = Ti.UI.createLabel({
+		color: '#fff',
+		font: {
+			fontSize: 30, 
+			fontFamily: 'Helvetica'
+		},
+		top: '5',
+		left: '5',
+		right: '5',
+		align: 'left',
+		text: quoteList[q]
+	});
+	mainWindow.add(quoteView);
+	quoteView.add(quoteText);
+};
+
+
+var prevQuote = function(){
+	if (q = -1) {
+		q = quoteList.length;
+	} else {
+		q = q--;
+	};
+	quoteView.hide();
+	quoteView = null;
+	//Draw quote window
+	quoteView = Ti.UI.createView({
+		backgroundColor: '#888',
+		borderRadius: 5,
+		borderWidth: 1,
+		borderColor: '#fff',
+		top: '10%',
+		height: '80%',
+		width: '90%'
+	});
+
+	//quote text
+	var quoteText = Ti.UI.createLabel({
+		color: '#fff',
+		font: {
+			fontSize: 30, 
+			fontFamily: 'Helvetica'
+		},
+		top: '5',
+		left: '5',
+		right: '5',
+		align: 'left',
+		text: quoteList[q]
+	});
+	mainWindow.add(quoteView);
+	quoteView.add(quoteText);
+	};
+
+//Event Listeners
+nextQuoteNav.addEventListener("click", nextQuote);
+prevQuoteNav.addEventListener("click", prevQuote);
+
