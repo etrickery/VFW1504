@@ -1,0 +1,32 @@
+//quote array
+
+var famousQuotes = [];
+
+famousQuotes[1] = "";
+famousQuotes[2] = "";
+famousQuotes[3] = "";
+famousQuotes[4] = "";
+famousQuotes[5] = "";
+famousQuotes[6] = "";
+famousQuotes[7] = "";
+famousQuotes[8] = "";
+famousQuotes[9] = "";
+famousQuotes[10] = "";
+
+var quoteText = Ti.UI.createLabel({
+	text: 'Quote test',
+	color: '#fff',
+	font: {
+		fontSize: 22, 
+		fontFamily: 'Baskerville', 
+		fontWeight: 'Bold',
+		fontStyle: 'italic'
+	},
+	top: '5%',
+	left: '5%',
+	right: '5%'
+	
+	
+});
+
+

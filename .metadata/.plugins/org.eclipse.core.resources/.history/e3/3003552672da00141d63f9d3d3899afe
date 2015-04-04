@@ -1,0 +1,70 @@
+var quoteList = ["Quote number one", "Quote number two", "Quote number three"];
+
+
+quoteNav = Ti.UI.createView({
+	backgroundColor: '#888',
+	borderRadius: 5,
+	borderWidth: 1,
+	borderColor: '#fff',
+	top: '85%',
+	height: '10%',
+	width: '90%',
+	id: 'NavBox'
+});
+
+prev = Ti.UI.createLabel({
+	text: "<< PREV",
+	color: '#fff',
+	font: {
+		fontSize: 30, 
+		fontFamily: 'Copperplate-Bold', 
+		fontWeight: 'Bold'
+	},
+	align: 'center',
+	align: 'left',
+	left: '5%'
+	
+});
+
+next = Ti.UI.createLabel({
+	text: "NEXT >>",
+	color: '#fff',
+	font: {
+		fontSize: 30, 
+		fontFamily: 'Copperplate-Bold', 
+		fontWeight: 'Bold'
+	},
+	align: 'center',
+	align: 'right',
+	right: '5%'	
+	
+});
+
+//nextQuote = function(){
+	//quoteContent.hide();
+	//quoteContent = null;
+	
+	//for(var q=0, qmax=quoteList.Length; q<=qmax; q++){
+		//quoteContent = quoteList[q];
+		quoteText = Ti.UI.createLabel({
+			text: "quoteContent",
+			color: '#fff',
+			font: {
+				fontSize: 22, 
+				fontFamily: 'Baskerville', 
+				fontWeight: 'Bold',
+				fontStyle: 'italic'
+			},
+			top: '5%',
+			left: '5%',
+			right: '5%'
+	
+	
+		});
+		
+	//};
+//};
+
+next.addEventListener("Click", nextQuote);
+
+

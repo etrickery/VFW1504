@@ -1,0 +1,10 @@
+var quoteNav = Ti.UI.createView({
+	backgroundColor: '#888',
+	borderRadius: 5,
+	borderWidth: 1,
+	borderColor: '#fff',
+	top: '85%',
+	height: '10%',
+	width: '90%',
+	id: 'NavBox'
+});

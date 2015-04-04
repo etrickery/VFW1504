@@ -1,0 +1,31 @@
+//quote array
+quoteList = ["Quote number one", "Quote number two", "Quote number three"];
+
+var nextQuote = function(){
+	quoteContent.hide();
+	quoteContent = null;
+	
+	for(var q=0, qmax=quoteList.Length; q<=qmax; q++){
+		quoteContent = quoteList[q];
+		quoteText = Ti.UI.createLabel({
+			text: quoteContent,
+			color: '#fff',
+			font: {
+				fontSize: 22, 
+				fontFamily: 'Baskerville', 
+				fontWeight: 'Bold',
+				fontStyle: 'italic'
+			},
+			top: '5%',
+			left: '5%',
+			right: '5%'
+	
+	
+		});
+		
+	};
+};
+
+
+
+

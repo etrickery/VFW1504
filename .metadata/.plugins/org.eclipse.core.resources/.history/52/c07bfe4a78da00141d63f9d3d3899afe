@@ -1,0 +1,37 @@
+//Eric Pfister
+//Quote Viewer app
+//
+
+Ti.UI.setBackground('#000');
+
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: '#fff',
+	backgroundImage: 'pattern.png',
+	backgroundRepeat: true,
+	title: 'Quote Viewer'
+	
+});
+
+
+var quoteText;
+var quoteContent;
+var nextQuote;
+var prevQuote;
+var loadNavtabs = require("navtabs");
+var quoteNav;
+var prev;
+var next;
+var q;
+
+
+
+quoteNav.add(prev, next);
+quoteView.add(quoteText);
+
+next.addEventListener("Click", nextQuote);
+
+mainWindow.add(quoteNav, quoteView);
+mainWindow.open();
+
+
