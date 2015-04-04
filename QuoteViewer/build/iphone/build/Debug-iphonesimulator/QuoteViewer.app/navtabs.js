@@ -1,1 +1,0 @@
-/Users/ericpfister/Documents/fullsail/VFW/VFW1504/QuoteViewer/Resources/navtabs.js

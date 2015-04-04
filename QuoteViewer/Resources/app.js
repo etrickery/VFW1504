@@ -8,9 +8,31 @@ Ti.UI.setBackground('#000');
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: '#fff',
 	backgroundImage: 'pattern.png',
-	backgroundRepeat: true,
-	title: 'Quote Viewer'
+	backgroundRepeat: true
 });
+
+//Draw title bar
+var titleBar = Ti.UI.createView({
+	backgroundColor: '#fff',
+	borderWidth: 1,
+	borderColor: '#fff',
+	top: '0',
+	height: '5%',
+	width: '100%'
+});
+
+//Title bar text
+var titleText = Ti.UI.createLabel({
+	color: 'black',
+	font: {
+		fontSize: 12, 
+		fontFamily: 'Helvetica'
+	},
+	top: '16',
+	align: 'center',
+	text: "Quote viewer"
+});
+
 
 //Draw quote window
 var quoteView = Ti.UI.createView({
@@ -18,9 +40,9 @@ var quoteView = Ti.UI.createView({
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: '#fff',
-	top: '85%',
-	height: '10%',
-	width: '90%',
+	top: '10%',
+	height: '80%',
+	width: '90%'
 });
 
 //Draw previous nav button
@@ -29,10 +51,11 @@ var prevQuoteNav = Ti.UI.createView({
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: '#fff',
-	top: '85%',
-	height: '10%',
+	top: '93%',
+	left: '5%',
+	height: '5%',
 	align: 'left',
-	width: '45%',
+	width: '40%'
 });
 
 //Draw previous text
@@ -44,7 +67,7 @@ var prev = Ti.UI.createLabel({
 		fontFamily: 'Copperplate-Bold', 
 		fontWeight: 'Bold'
 	},
-	top: '8',
+	top: '1',
 	align: 'left',
 	left: '5%'
 	
@@ -56,10 +79,11 @@ var nextQuoteNav = Ti.UI.createView({
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: '#fff',
-	top: '85%',
-	height: '10%',
+	top: '93%',
+	right: '5%',
+	height: '5%',
 	align: 'right',
-	width: '45%',
+	width: '40%'
 });
 
 //Draw next text
@@ -71,18 +95,19 @@ var next = Ti.UI.createLabel({
 		fontFamily: 'Copperplate-Bold', 
 		fontWeight: 'Bold'
 	},
-	top: '8',
+	top: '1',
 	align: 'right',
 	right: '5%'	
 	
 });
 
-var loadContent = require(content.js);
+//var loadContent = require(content.js);
 
 
 mainWindow.open();
-mainWindow.add(quoteView, prevQuoteNav, nextQuoteNav);
+mainWindow.add(titleBar, quoteView, prevQuoteNav, nextQuoteNav);
 prevQuoteNav.add(prev);
 nextQuoteNav.add(next);
+titleBar.add(titleText);
 
 
