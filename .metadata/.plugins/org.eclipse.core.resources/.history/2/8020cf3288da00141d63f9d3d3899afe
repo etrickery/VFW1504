@@ -1,17 +1,3 @@
-//Eric Pfister
-//Quote Viewer app
-//
-
-Ti.UI.setBackground('#000');
-
-//Define main window
-var mainWindow = Ti.UI.createWindow({
-	backgroundColor: '#fff',
-	backgroundImage: 'pattern.png',
-	backgroundRepeat: true,
-	title: 'Quote Viewer'
-});
-
 //Draw quote window
 var quoteView = Ti.UI.createView({
 	backgroundColor: '#888',
@@ -24,7 +10,7 @@ var quoteView = Ti.UI.createView({
 });
 
 //Draw previous nav button
-var prevQuoteNav = Ti.UI.createView({
+var quoteNav = Ti.UI.createView({
 	backgroundColor: '#888',
 	borderRadius: 5,
 	borderWidth: 1,
@@ -44,14 +30,14 @@ var prev = Ti.UI.createLabel({
 		fontFamily: 'Copperplate-Bold', 
 		fontWeight: 'Bold'
 	},
-	top: '8',
+	align: 'center',
 	align: 'left',
 	left: '5%'
 	
 });
 
 //Draw Next nav button
-var nextQuoteNav = Ti.UI.createView({
+var quoteNav = Ti.UI.createView({
 	backgroundColor: '#888',
 	borderRadius: 5,
 	borderWidth: 1,
@@ -71,18 +57,12 @@ var next = Ti.UI.createLabel({
 		fontFamily: 'Copperplate-Bold', 
 		fontWeight: 'Bold'
 	},
-	top: '8',
+	align: 'center',
 	align: 'right',
 	right: '5%'	
 	
 });
 
-var loadContent = require(content.js);
 
-
-mainWindow.open();
-mainWindow.add(quoteView, prevQuoteNav, nextQuoteNav);
-prevQuoteNav.add(prev);
-nextQuoteNav.add(next);
 
 

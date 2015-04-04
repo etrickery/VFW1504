@@ -44,7 +44,7 @@ var prev = Ti.UI.createLabel({
 		fontFamily: 'Copperplate-Bold', 
 		fontWeight: 'Bold'
 	},
-	top: '8',
+	align: 'center',
 	align: 'left',
 	left: '5%'
 	
@@ -71,18 +71,15 @@ var next = Ti.UI.createLabel({
 		fontFamily: 'Copperplate-Bold', 
 		fontWeight: 'Bold'
 	},
-	top: '8',
+	align: 'center',
 	align: 'right',
 	right: '5%'	
 	
 });
 
-var loadContent = require(content.js);
 
 
 mainWindow.open();
 mainWindow.add(quoteView, prevQuoteNav, nextQuoteNav);
-prevQuoteNav.add(prev);
-nextQuoteNav.add(next);
-
+var loadContent = require(content.js);
 
