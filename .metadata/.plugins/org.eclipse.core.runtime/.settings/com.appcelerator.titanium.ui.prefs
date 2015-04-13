@@ -1,5 +1,7 @@
 =run
-LAST_LAUNCH_TIMESTAMP=1428126170375
+LAST_LAUNCH_TIMESTAMP=1428205485130
+Project2\:launchMode=run
+Project2\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.EE572683-0E34-41CB-8288-F0D3560A7522
 QuoteViewer\:launchMode=run
 QuoteViewer\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
 eclipse.preferences.version=1
