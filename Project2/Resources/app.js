@@ -1,64 +1,56 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
+Ti.UI.setBackgroundColor('#000');
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+//data array
+var vehicles = [{title: "Dodge"}, {title: "Chrysler"}, {title: "Jeep"}, {title: "Ram"}, {title: "Fiat"}];
 
-
-//
-// create base UI tab and root window
-//
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "CCC"
 });
 
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+
+//TITLE BAR
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: "#FFF",
+	height: 60,
+	top: 0
 });
 
-win1.add(label1);
-
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
+var titleBorder = Ti.UI.createView({
+	backgroundColor: "#FFF",
+	height: 1,
+	top: titleBar.height + titleBar.top
 });
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+var titleLabel = Ti.UI.createLabel({
+	text: "FCA Vehicle Line-Up",
+	font: {fontSize: 18, fontFamily: "Copperplate"},
+	textAlign: "center",
+	bottom: 3
 });
 
-win2.add(label2);
+
+//TABLE VIEW
+
+var cars = Ti.UI.createTableView({
+	data: vehicles,
+	top: titleBorder.height + titleBorder.top
+});
 
 
 
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
+
+//DISPLAY ADDING
+
+var loadVehicles = require('vehicles');
+
+mainWindow.open();
+mainWindow.add(titleBar, titleBorder, cars);
+
+titleBar.add(titleLabel);
 
 
-// open tab group
-tabGroup.open();
+
+
+
+

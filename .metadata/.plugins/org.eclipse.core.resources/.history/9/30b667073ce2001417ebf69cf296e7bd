@@ -1,0 +1,20 @@
+Ti.UI.setBackgroundColor('#000');
+
+//data array
+var vehicles = [{title: "Dodge"}, {title: "Chrsyler"}, {title: "Jeep"}, {title: "Ram"}];
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "CCC"
+});
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: "#FFF",
+	height: 60
+});
+
+
+var loadVehicles = require('vehicles');
+
+mainWindow.open();
+mainWindow.add(titleBar);
+

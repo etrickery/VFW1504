@@ -1,0 +1,32 @@
+Ti.UI.setBackgroundColor('#000');
+
+//data array
+var vehicles = [{title: "Dodge"}, {title: "Chrsyler"}, {title: "Jeep"}, {title: "Ram"}];
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "CCC"
+});
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: "#FFF",
+	height: 60,
+	top: 0
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "FCA Vehicle Line-Up",
+	font: {fontSize: 18, fontFamily: "Copperplate"},
+	textAlign: "center",
+	bottom: 3
+});
+
+var loadVehicles = require('vehicles');
+
+mainWindow.open();
+mainWindow.add(titleBar);
+
+titleBar.add(titleLabel);
+
+
+
+
