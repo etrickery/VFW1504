@@ -1,0 +1,137 @@
+Ti.UI.setBackgroundColor('#000');
+
+//data array
+//var vehicles = [{title: "Dodge"}, {title: "Chrysler"}, {title: "Jeep"}, {title: "Ram"}, {title: "Fiat"}];
+//var dodge = [{title: "Challenger"}, {title: "Charger"}, {title: "Dart"}, {title: "Durango"}, {title: "Grand Caravan"}, {title: "Journey"}, {title: "Viper"}];
+//var chrysler = [{title: "200"}, {title: "300"}, {title: "Town & Country"}];
+//var jeep = [{title: "Renegade"}, {title: "Wrangler"}, {title: "Grand Cherokee"}, {title: "Compass"}, {title: "Patriot"}, {title: "Cherokee"}];
+//var fiat = [{title: "500e"}, {title: "500L"}, {title: "500"}, {title: "500X"}, {title: "500 Cabrio"}, {title: "500 Abarth"}];
+
+
+
+
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "CCC"
+});
+
+
+//TITLE BAR
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: "#FFF",
+	height: 60,
+	top: 0
+});
+
+var titleBorder = Ti.UI.createView({
+	backgroundColor: "#000",
+	height: 1,
+	top: titleBar.height + titleBar.top
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "FCA US Vehicle Line-Up",
+	font: {fontSize: 18, fontFamily: "Copperplate"},
+	textAlign: "center",
+	bottom: 3
+});
+
+
+//TABLE VIEW
+
+//var cars = Ti.UI.createTableView({
+//	data: 
+//});
+
+//if(Ti.Platform.name === "iPhone OS"){
+//	cars.style = Ti.UI.iPhone.TableViewStyle.GROUPED;	
+//};
+
+//POPULATE ROWS
+
+//for(var c=0, v=vehicles.length; c<v; c++){
+//	var cars = Ti.UI.createTableView({
+//	data: vehicles,
+//	top: titleBorder.height + titleBorder.top
+//});
+//};
+
+
+var mopar = {
+	"dodge": {
+		"title": "Dodge",
+		"footer": "Dodge vehicles",
+		"cars": [
+			{"model": "Challenger", "description": "The current third-generation Challenger is a rear-wheel-drive coupe sporting a variety of powerful engines and equipment. The most recent Hellcat Challenger boasts 707 horsepower, and has a top speed over 206MPH!"},
+			{"model": "Charger", "description": "The Charger has been around in some form since 1964, and was featured as the bright orange 'General Lee' on television's 'The Dukes of Hazzard'. Currently a four door Charger with a 'Pentastar' V6 engine can achieve over 34MPG on the highway."},
+			{"model": "Dart", "description": "The Dart is buit in Belvidere, IL. Travis Pastrana drove a Dart in his win at New Hampshire in 2012 during his stint as a driver for Dodge in the Global RallyCross series. Of course, this racing version had over 600 horsepower and a six-speed transmission mated to an all-wheel-drive system."},
+			{"model": "Durango", "description": "The new Durango is a large family sport-utility vehicle that has been discontinued. Fiat's plans are to focus each brand on a segment, with Jeep's Grand Cherokee taking the place of the Durango for good next year. Dodge will retain the badge, for likely later use in a cross-over."},
+			{"model": "Grand Caravan", "description": "Along with the Durango, the Grand Caravan is due to be discontinued. A staple in drive-ways across the globe, the Grand Caravan has and currently is one of the best selling vehicles of all time. The first minivan sported the badge, and the Grand Caravan will be outlived by Chrysler's Town & Country after 2015."},
+			{"model": "Journey", "description": "The Journey sports a four-cylinder or V6, and is sold around the world, also under other badges like the Fiat Freemont. A small SUV, the Journey shares the current brand's recent facelift and 'Crosshairs' grille."},
+			{"model": "Viper", "description": "The current Viper sports an 8.4 liter 10 cylinder engine that pulls over 600 horsepower from the gastank. All of this, while being insanely lightweight and hovering a few inches above the pavement."},
+			
+		]
+	},
+	
+	"chrysler": {
+		"title": "Chrysler",
+		"footer": "Chrysler vehicles",
+		"cars": [
+			"200",
+			"300",
+			"Town & Country"
+			]
+	},
+	
+	
+	"jeep": {
+		"title": "Jeep",
+		"footer": "Jeep vehicles",
+		"cars": [
+			"Renegade",
+			"Wrangler",
+			"Grand Cherokee",
+			"Compass",
+			"Patriot",
+			"Cherokee",
+		]
+	},
+	
+	
+	"fiat": {
+		"title": "Fiat",
+		"footer": "Fiat vehicles",
+		"cars": [
+			"500e",
+			"500L",
+			"500",
+			"500X",
+			"500 Cabrio",
+			"500 Abarth",
+		]
+	}
+	
+};
+
+			
+
+
+
+
+
+
+//DISPLAY
+
+var loadVehicles = require('vehicles');
+
+mainWindow.open();
+mainWindow.add(titleBar, titleBorder);
+
+titleBar.add(titleLabel);
+
+
+
+
+
+

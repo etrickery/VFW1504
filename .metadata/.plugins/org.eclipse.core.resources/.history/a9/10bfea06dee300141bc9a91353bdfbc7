@@ -1,0 +1,5 @@
+//TABLE VIEW
+
+//var cars = Ti.UI.createTableView({
+//	data: "fiat"
+//});

@@ -1,0 +1,158 @@
+Ti.UI.setBackgroundColor('#000');
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "CCC"
+});
+
+
+
+
+
+
+//TITLE BAR
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: "#FFF",
+	height: 60,
+	top: 0
+});
+
+var titleBorder = Ti.UI.createView({
+	backgroundColor: "#000",
+	height: 1,
+	top: titleBar.height + titleBar.top
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "FCA US Vehicle Line-Up",
+	font: {fontSize: 18, fontFamily: "Copperplate"},
+	textAlign: "center",
+	bottom: 3
+});
+
+
+
+
+
+
+
+//json data
+
+var mopar = {
+	"dodge": {
+		"title": "Dodge",
+		"footer": "Dodge vehicles",
+		"cars": [
+			{"model": "Challenger", "description": "The current third-generation Challenger is a rear-wheel-drive coupe sporting a variety of powerful engines and equipment. The most recent Hellcat Challenger boasts 707 horsepower, and has a top speed over 206MPH!"},
+			{"model": "Charger", "description": "The Charger has been around in some form since 1964, and was featured as the bright orange 'General Lee' on television's 'The Dukes of Hazzard'. Currently a four door Charger with a 'Pentastar' V6 engine can achieve over 34MPG on the highway."},
+			{"model": "Dart", "description": "The Dart is buit in Belvidere, IL. Travis Pastrana drove a Dart in his win at New Hampshire in 2012 during his stint as a driver for Dodge in the Global RallyCross series. Of course, this racing version had over 600 horsepower and a six-speed transmission mated to an all-wheel-drive system."},
+			{"model": "Durango", "description": "The new Durango is a large family sport-utility vehicle that has been discontinued. Fiat's plans are to focus each brand on a segment, with Jeep's Grand Cherokee taking the place of the Durango for good next year. Dodge will retain the badge, for likely later use in a cross-over."},
+			{"model": "Grand Caravan", "description": "Along with the Durango, the Grand Caravan is due to be discontinued. A staple in drive-ways across the globe, the Grand Caravan has and currently is one of the best selling vehicles of all time. The first minivan sported the badge, and the Grand Caravan will be outlived by Chrysler's Town & Country after 2015."},
+			{"model": "Journey", "description": "The Journey sports a four-cylinder or V6, and is sold around the world, also under other badges like the Fiat Freemont. A small SUV, the Journey shares the current brand's recent facelift and 'Crosshairs' grille."},
+			{"model": "Viper", "description": "The current Viper sports an 8.4 liter 10 cylinder engine that pulls over 600 horsepower from the gastank. All of this, while being insanely lightweight and hovering a few inches above the pavement."},
+			
+		]
+	},
+	
+	"chrysler": {
+		"title": "Chrysler",
+		"footer": "Chrysler vehicles",
+		"cars": [
+			{"model": "200", "description": ""},
+			{"model": "300", "description": ""},
+			{"model": "Town & Country", "description": ""}
+			]
+	},
+	
+	
+	"jeep": {
+		"title": "Jeep",
+		"footer": "Jeep vehicles",
+		"cars": [
+			{"model": "Renegade", "description": ""},
+			{"model": "Wrangler", "description": ""},
+			{"model": "Grand Cherokee", "description": ""},
+			{"model": "Compass", "description": ""},
+			{"model": "Patriot", "description": ""},
+			{"model": "Cherokee", "description": ""}
+		]
+	},
+	
+	
+	"fiat": {
+		"title": "Fiat",
+		"footer": "Fiat vehicles",
+		"cars": [
+			{"model": "500e", "description": ""},
+			{"model": "500L", "description": ""},
+			{"model": "500", "description": ""},
+			{"model": "500X", "description": ""},
+			{"model": "500 Cabrio", "description": ""},
+			{"model": "500 Abarth", "description": ""}
+		]
+	}
+	
+};
+
+
+var menuTable = Ti.UI.createTableView({
+	top: titleBorder.top + titleBorder.height
+	
+});
+
+var dodgeBrand = Ti.UI.createTableViewSection({
+		headerTitle: "Dodge",
+		footerTitle: "Dodge vehicles"
+});
+
+
+for(d in mopar){																														
+	for(o in mopar[d]){																					
+		if(o === "cars"){
+			if(o === "dodge"){																				
+				for(var g=0; g<mopar[d].cars.length; g++){									
+					for(e in mopar[d].cars[g]){																					
+						if(e === "model"){																				
+							var carRow = Ti.UI.createTableViewRow({											
+								title: mopar[d].cars[g][e]																						
+							});																																	
+							dodgeBrand.add(carRow);																						
+							console.log(mopar[d].cars[g][e]);
+						}
+					}
+				}
+			}	
+		}
+	}	
+}	
+
+var chryslerBrand = Ti.UI.createTableViewSection({
+		headerTitle: "Chrysler",
+		footerTitle: "Chrysler vehicles"
+});
+
+var jeepBrand = Ti.UI.createTableViewSection({
+		headerTitle: "Jeep",
+		footerTitle: "Jeep vehicles"
+});
+
+var fiatBrand = Ti.UI.createTableViewSection({
+		headerTitle: "Fiat",
+		footerTitle: "Fiat vehicles"
+});
+
+var brandSections = [dodgeBrand, chryslerBrand, jeepBrand, fiatBrand];
+menuTable.setData(brandSections);
+
+
+
+
+//var loadVehicles = require('vehicles');
+
+titleBar.add(titleLabel);
+mainWindow.add(titleBar, titleBorder, menuTable);
+mainWindow.open();
+
+
+
+

@@ -1,36 +1,42 @@
-Logger started at: Saturday, April 4, 2015 12:42:35 PM EDT
+Logger started at: Saturday, April 18, 2015 6:59:16 PM EDT
 Component: com.appcelerator.titanium.ios.core
 Version: 1.0.0.1411756658
-[42:35.556] Sent: >21*1428165755554*version<
-[42:35.557] Recv: >1428165755554*2*3.6.0<
-[42:35.558] Sent: >20*1428165755555*update<
-[42:35.559] Recv: >1428165755555*3.6.0<
-[42:35.559] Sent: >45*1428165755556*option*stepFiltersEnabled*false<
-[42:35.559] Recv: >1428165755556<
-[42:35.560] Sent: >36*1428165755557*option*monitorXHR*true<
-[42:35.560] Recv: >1428165755557<
-[42:35.560] Sent: >45*1428165755558*option*suspendOnFirstLine*false<
-[42:35.561] Recv: >1428165755558<
-[42:35.561] Sent: >46*1428165755559*option*suspendOnExceptions*false<
-[42:35.561] Recv: >1428165755559<
-[42:35.561] Sent: >41*1428165755560*option*suspendOnErrors*true<
-[42:35.562] Recv: >1428165755560<
-[42:35.562] Sent: >43*1428165755561*option*suspendOnKeywords*true<
-[42:35.562] Recv: >1428165755561<
-[42:35.562] Sent: >45*1428165755562*option*bypassConstructors*false<
-[42:35.562] Recv: >1428165755562<
-[42:35.562] Sent: >45*1428165755563*option*stepFiltersEnabled*false<
-[42:35.563] Recv: >1428165755563<
-[42:35.563] Sent: >30*1428165755564*detailFormatters<
-[42:35.563] Recv: >1428165755564<
-[42:35.563] Sent: >20*1428165755565*enable<
-[42:35.564] Recv: >1428165755565<
-[42:35.588] Recv: >threads*created*0*kroll$1<
-[42:35.593] Recv: >log*out*[DEBUG] Loading: /Users/ericpfister/Library/Developer/CoreSimulator/Devices/0B4C79B2-9DBD-44BB-824E-DA680BD80CEB/data/Containers/Bundle/Application/D9120FB4-ADD1-40B6-97C3-2D57973C106E/QuoteViewer.app/app.js, Resource: app_js<
-[42:35.594] Recv: >scripts*created*1|app:/app.js||1|131<
-[42:35.595] Recv: >resumed*0*started<
-[42:35.596] Recv: >log*out*[DEBUG] Loading: /Users/ericpfister/Library/Developer/CoreSimulator/Devices/0B4C79B2-9DBD-44BB-824E-DA680BD80CEB/data/Containers/Bundle/Application/D9120FB4-ADD1-40B6-97C3-2D57973C106E/QuoteViewer.app/_app_props_.json, Resource: _app_props__json<
-[42:35.599] Recv: >log*out*[DEBUG] Loading: /Users/ericpfister/Library/Developer/CoreSimulator/Devices/0B4C79B2-9DBD-44BB-824E-DA680BD80CEB/data/Containers/Bundle/Application/D9120FB4-ADD1-40B6-97C3-2D57973C106E/QuoteViewer.app/content.js, Resource: content_js<
-[42:35.599] Recv: >scripts*created*2|app:/content.js||1|88<
-[42:35.666] Recv: >log*out*[DEBUG] Application booted in 183.143020 ms<
+[59:16.845] Sent: >21*1429397956845*version<
+[59:16.846] Recv: >1429397956845*2*3.6.0<
+[59:16.847] Sent: >45*1429397956846*option*stepFiltersEnabled*false<
+[59:16.848] Recv: >1429397956846<
+[59:16.848] Sent: >36*1429397956847*option*monitorXHR*true<
+[59:16.848] Recv: >1429397956847<
+[59:16.848] Sent: >45*1429397956848*option*suspendOnFirstLine*false<
+[59:16.849] Recv: >1429397956848<
+[59:16.849] Sent: >46*1429397956849*option*suspendOnExceptions*false<
+[59:16.849] Recv: >1429397956849<
+[59:16.849] Sent: >41*1429397956850*option*suspendOnErrors*true<
+[59:16.849] Recv: >1429397956850<
+[59:16.850] Sent: >43*1429397956851*option*suspendOnKeywords*true<
+[59:16.850] Recv: >1429397956851<
+[59:16.850] Sent: >45*1429397956852*option*bypassConstructors*false<
+[59:16.850] Recv: >1429397956852<
+[59:16.850] Sent: >45*1429397956853*option*stepFiltersEnabled*false<
+[59:16.851] Recv: >1429397956853<
+[59:16.851] Sent: >30*1429397956854*detailFormatters<
+[59:16.851] Recv: >1429397956854<
+[59:16.851] Sent: >20*1429397956855*enable<
+[59:16.851] Recv: >1429397956855<
+[59:16.872] Recv: >threads*created*0*kroll$1<
+[59:16.878] Recv: >log*out*[DEBUG] Loading: /Users/ericpfister/Library/Developer/CoreSimulator/Devices/A7B41607-C030-4725-8468-ED3DE239CF1E/data/Containers/Bundle/Application/4B9FAD1D-66C5-4B92-BC9E-8F019302C731/Project2.app/app.js, Resource: app_js<
+[59:16.878] Recv: >scripts*created*1|app:/app.js||1|178<
+[59:16.879] Recv: >resumed*0*started<
+[59:16.880] Recv: >log*out*[DEBUG] Loading: /Users/ericpfister/Library/Developer/CoreSimulator/Devices/A7B41607-C030-4725-8468-ED3DE239CF1E/data/Containers/Bundle/Application/4B9FAD1D-66C5-4B92-BC9E-8F019302C731/Project2.app/_app_props_.json, Resource: _app_props__json<
+[59:16.883] Recv: >log*out*[INFO] Challenger<
+[59:16.884] Recv: >log*out*[INFO] Charger<
+[59:16.884] Recv: >log*out*[INFO] Dart<
+[59:16.884] Recv: >log*out*[INFO] Durango<
+[59:16.884] Recv: >log*out*[INFO] Grand Caravan<
+[59:16.884] Recv: >log*out*[INFO] Journey<
+[59:16.884] Recv: >log*out*[INFO] Viper<
+[59:16.885] Recv: >log*out*[INFO] 200<
+[59:16.885] Recv: >log*out*[INFO] 300<
+[59:16.885] Recv: >log*out*[INFO] Town & Country<
+[59:16.976] Recv: >log*out*[DEBUG] Application booted in 175.184011 ms<
 ----------End of file----------
