@@ -8,12 +8,12 @@
 #define STRING(x) _QUOTEME(x)
 
 NSString * const TI_APPLICATION_DEPLOYTYPE = @"development";
-NSString * const TI_APPLICATION_ID = @"com.ericspfister.project3";
+NSString * const TI_APPLICATION_ID = @"com.fullsail.Project3";
 NSString * const TI_APPLICATION_PUBLISHER = @"ericpfister";
 NSString * const TI_APPLICATION_URL = @"http://www.ericspfister.com";
 NSString * const TI_APPLICATION_NAME = @"Project3";
 NSString * const TI_APPLICATION_VERSION = @"1.0";
-NSString * const TI_APPLICATION_DESCRIPTION = @"";
+NSString * const TI_APPLICATION_DESCRIPTION = @"undefined";
 NSString * const TI_APPLICATION_COPYRIGHT = @"2015 by ericpfister";
 NSString * const TI_APPLICATION_GUID = @"beaae651-9176-4fd9-bf2e-3acda345465f";
 BOOL const TI_APPLICATION_ANALYTICS = true;

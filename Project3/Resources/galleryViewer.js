@@ -37,18 +37,19 @@ var openGallery = function(){
 		
 	//return to menu button (goes in title bar)	
 	var closeButton = Ti.UI.createView({
-		bottom: 3,
-		right: 3,
+		bottom: 10,
+		right: 10,
 		borderWidth: 1,
+		borderRadius: 10,
 		backgroundColor: '#FFF',
-		height: 15,
-		width: 36
+		height: 40,
+		width: 92
 	});
 	
 	var closeButtonLabel = Ti.UI.createLabel({
-		text: 'MENU',
+		text: 'BACK',
 		align: 'center',
-		font: {fontSize: 10, fontFamily: "Helvetica", fontColor: "#000"}
+		font: {fontSize: 20, fontFamily: "Helvetica", fontColor: "#000"}
 	});
 	
 	closeButton.add(closeButtonLabel);
@@ -59,17 +60,118 @@ var openGallery = function(){
 	//scrollview
 	
 	
-	
+	var galleryUpperBorder = Ti.UI.createView({
+		height: 1,
+		backgroundColor: '#000',
+		top: galleryTitleBarBorder.top + galleryTitleBarBorder.height + gap
+	});
 	
 	var galleryContainer = Ti.UI.createScrollView({
-		top: galleryTitleBarBorder.top + galleryTitleBarBorder.height,
+		top: galleryUpperBorder.top + galleryUpperBorder.height,
 		layout: 'horizontal',
+		
 		width: screenWidth,
 		contentWidth: screenWidth,
 		showVerticalScrollIndicator: true,
-		Height: screenHeight - galleryTitleBarBorder.height - galleryTitleBarBorder.top,
-		backgroundColor: '#CCC'
+		Height: screenHeight - galleryTitleBarBorder.height - galleryTitleBarBorder.top - 70,
+		backgroundColor: '#FFF'
 	});
+	
+	
+	
+	
+	
+	
+	
+	//image detail
+	var getImage = function(imageTitle){
+		var imageWindow = Ti.UI.createWindow({
+			backgroundColor: '#CCC'
+		});
+		
+		//titlebar
+		var detailTitleBar = Ti.UI.createView({
+			backgroundColor: '#FFF',
+			height: 60,
+			top: 0
+		});
+			
+		var detailTitleBarBorder = Ti.UI.createView({
+			backgroundColor: '#333',
+			height: 1,
+			top: detailTitleBar.height + detailTitleBar.top
+		});
+		
+		var detailTitleBarLabel = Ti.UI.createLabel({
+			text: imageTitle,
+			bottom: 3,
+			align: 'center',
+		});
+		
+		detailTitleBar.add(detailTitleBarLabel);
+		
+		var selectedImageUpperBorder = Ti.UI.createView({
+			height: 1,
+			backgroundColor: '#000',
+			top: galleryUpperBorder.top + galleryUpperBorder.height
+		});
+		
+		var selectedImageView = Ti.UI.createView({
+			top: selectedImageUpperBorder.top + selectedImageUpperBorder.height,
+			width: screenWidth,
+			Height: screenHeight - galleryTitleBarBorder.height - galleryTitleBarBorder.top - 70,
+			backgroundColor: '#FFF'
+	
+		});
+		
+		var selectedImage = Ti.UI.createImageView({
+			image: "images/" + imageTitle,
+			width: screenWidth,
+			title: imageTitle,
+			verticalAlign: 'center'
+		});
+		
+		var selectedImageLowerBorder = Ti.UI.createView({
+			height: 1,
+			backgroundColor: '#000',
+			top: selectedImageView.top + selectedImageView.height
+		});
+			
+		selectedImageView.add(selectedImage);
+		
+		var detailCloseButton = Ti.UI.createView({
+			bottom: 10,
+			right: 10,
+			borderWidth: 1,
+			borderRadius: 10,
+			backgroundColor: '#FFF',
+			height: 40,
+			width: 92
+		});
+		
+		var detailCloseButtonLabel = Ti.UI.createLabel({
+			text: 'BACK',
+			align: 'center',
+			font: {fontSize: 20, fontFamily: "Helvetica", fontColor: "#000"}
+		});
+		
+		detailCloseButton.add(detailCloseButtonLabel);
+		
+		var closeGetImage = function(){
+			imageWindow.close();	
+		};
+		
+		//close button event listener
+		detailCloseButton.addEventListener("click", closeGetImage);
+		
+		imageWindow.add(selectedImageView, selectedImageUpperBorder, selectedImageLowerBorder);
+		
+		imageWindow.add(detailTitleBar, detailTitleBarBorder, detailCloseButton);
+		imageWindow.open();
+	};
+	
+	
+	
 	
 	for(var i=0; i<numImages; i++){
 		var imageView = Ti.UI.createView({
@@ -84,12 +186,18 @@ var openGallery = function(){
 		});
 		var carImage = Ti.UI.createImageView({
 			image: "images/" + imageCollection[i],
-			width: imageSize * 2
+			width: imageSize * 2,
+			title: imageCollection[i]
 		});
 		imageView.add(carImage);
 		galleryContainer.add(imageView);
 	};
 	
+	var galleryLowerBorder = Ti.UI.createView({
+		height: 1,
+		backgroundColor: '#000',
+		top: galleryContainer.top + galleryContainer.height
+	});
 	
 	
 	//close gallery function
@@ -100,10 +208,17 @@ var openGallery = function(){
 	//close button event listener
 	closeButton.addEventListener("click", closeGallery);
 	
-	
+	galleryContainer.addEventListener("click", function(event){
+		
+		//be sure the border wasn't clicked and run the function
+		if(event.source.title){
+			getImage(event.source.title);
+		};
+		
+	});
 	
 	//build gallery
-	galleryTitleBar.add(closeButton);
+	galleryView.add(galleryUpperBorder, galleryLowerBorder, closeButton);
 	
 	galleryView.add(galleryTitleBar, galleryTitleBarBorder, galleryContainer);
 	galleryView.open();
@@ -147,18 +262,19 @@ var openAbout = function(){
 		
 	//return to menu button (goes in title bar)	
 	var aboutCloseButton = Ti.UI.createView({
-		bottom: 3,
-		right: 3,
+		bottom: 10,
+		right: 10,
 		borderWidth: 1,
+		borderRadius: 10,
 		backgroundColor: '#FFF',
-		height: 15,
-		width: 36
+		height: 40,
+		width: 92
 	});
 	
 	var aboutCloseButtonLabel = Ti.UI.createLabel({
-		text: 'MENU',
+		text: 'BACK',
 		align: 'center',
-		font: {fontSize: 10, fontFamily: "Helvetica", fontColor: "#000"}
+		font: {fontSize: 20, fontFamily: "Helvetica", fontColor: "#000"}
 	});
 	
 	aboutCloseButton.add(aboutCloseButtonLabel);
@@ -203,7 +319,7 @@ var openAbout = function(){
 	
 	
 	//build gallery
-	aboutTitleBar.add(aboutCloseButton);
+	aboutView.add(aboutCloseButton);
 	
 	aboutView.add(aboutTitleBar, aboutTitleBarBorder, aboutViewer, aboutUpperBorder, aboutLowerBorder);
 	aboutView.open();
