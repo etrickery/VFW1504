@@ -112,7 +112,7 @@ var openGallery = function(){
 		
 		var selectedImageUpperBorder = Ti.UI.createView({
 			height: 1,
-			backgroundColor: '#000',
+			backgroundColor: '#FFF',
 			top: galleryUpperBorder.top + galleryUpperBorder.height
 		});
 		
@@ -120,7 +120,7 @@ var openGallery = function(){
 			top: selectedImageUpperBorder.top + selectedImageUpperBorder.height,
 			width: screenWidth,
 			Height: screenHeight - galleryTitleBarBorder.height - galleryTitleBarBorder.top - 70,
-			backgroundColor: '#FFF'
+			backgroundColor: '#000'
 	
 		});
 		
@@ -133,7 +133,7 @@ var openGallery = function(){
 		
 		var selectedImageLowerBorder = Ti.UI.createView({
 			height: 1,
-			backgroundColor: '#000',
+			backgroundColor: '#FFF',
 			top: selectedImageView.top + selectedImageView.height
 		});
 			
@@ -158,7 +158,7 @@ var openGallery = function(){
 		detailCloseButton.add(detailCloseButtonLabel);
 		
 		var closeGetImage = function(){
-			imageWindow.close();	
+			imageWindow.close({transition:Titanium.UI.iPhone.AnimationStyle.CURL_DOWN});	
 		};
 		
 		//close button event listener
@@ -167,7 +167,7 @@ var openGallery = function(){
 		imageWindow.add(selectedImageView, selectedImageUpperBorder, selectedImageLowerBorder);
 		
 		imageWindow.add(detailTitleBar, detailTitleBarBorder, detailCloseButton);
-		imageWindow.open();
+		imageWindow.open({transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP});
 	};
 	
 	
@@ -175,7 +175,7 @@ var openGallery = function(){
 	
 	for(var i=0; i<numImages; i++){
 		var imageView = Ti.UI.createView({
-			backgroundColor: '#FFF',
+			backgroundColor: '#000',
 			top: gap,
 			left: gap,
 			width: imageSize,
@@ -202,7 +202,7 @@ var openGallery = function(){
 	
 	//close gallery function
 	var closeGallery = function(){
-		galleryView.close();	
+		galleryView.close({transition:Titanium.UI.iPhone.AnimationStyle.CURL_DOWN});	
 	};
 
 	//close button event listener
@@ -221,7 +221,7 @@ var openGallery = function(){
 	galleryView.add(galleryUpperBorder, galleryLowerBorder, closeButton);
 	
 	galleryView.add(galleryTitleBar, galleryTitleBarBorder, galleryContainer);
-	galleryView.open();
+	galleryView.open({transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP});
 };
 
 
@@ -310,7 +310,7 @@ var openAbout = function(){
 	
 	//close about function
 	var closeAbout = function(){
-		aboutView.close();	
+		aboutView.close({transition:Titanium.UI.iPhone.AnimationStyle.CURL_DOWN});	
 	};
 
 	//close button event listener
@@ -322,7 +322,7 @@ var openAbout = function(){
 	aboutView.add(aboutCloseButton);
 	
 	aboutView.add(aboutTitleBar, aboutTitleBarBorder, aboutViewer, aboutUpperBorder, aboutLowerBorder);
-	aboutView.open();
+	aboutView.open({transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP});
 };
 
 

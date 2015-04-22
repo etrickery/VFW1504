@@ -8,13 +8,13 @@ Ti.UI.setBackgroundColor = '#000';
 
 var screenWidth = Ti.Platform.displayCaps.platformWidth;
 var screenHeight = Ti.Platform.displayCaps.platformHeight;
-var numRows = 4;
+var numRows = 3;
 var gap = 10;
 var imageCollectionFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
 var imageCollection = imageCollectionFolder.getDirectoryListing();
 var numImages = imageCollection.length;
 var realWidth = (screenWidth - (numRows + 1)*gap);
-var imageSize = realWidth / numRows;
+var imageSize = realWidth / 3;
 
 
 var mainMenu = Ti.UI.createWindow({
