@@ -1,0 +1,53 @@
+
+//Eric Pfister
+//VFA 1504 01
+//04-20-2015
+
+
+Ti.UI.setBackgroundColor = '#000';
+
+
+
+var mainMenu = Ti.UI.createWindow({
+	backgroundColor: '#ddd'
+});
+
+
+//titlebar
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: '#FFF',
+	height: '60',
+	top: 0
+});
+	
+var titleBarBorder = Ti.UI.createView({
+	backgroundColor: '#333',
+	height: '1',
+	top: titleBar.height + titleBar.top
+});
+
+var titleBarLabel = Ti.UI.createLabel({
+	text: 'Project 3: Image Gallery',
+	bottom: '3',
+	align: 'center',
+});
+
+titleBarView.add(titleBarLabel);
+titleBar.add(titleBarView);
+
+
+
+//load page
+
+
+mainMenu.add(titleBar);
+mainMenu.open();
+
+
+
+
+
+
+
+

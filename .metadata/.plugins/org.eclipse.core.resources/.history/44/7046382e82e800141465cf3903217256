@@ -1,0 +1,74 @@
+
+//functions
+
+var openGallery = function(){
+	
+	//gallery window
+	var galleryView = Ti.UI.createWindow({
+		backgroundColor: '#CCC'
+	});
+	
+	//gallery title bar
+	var galleryTitleBar = Ti.UI.createView({
+		backgroundColor: '#FFF',
+		height: 60,
+		top: 0
+	});
+		
+	var galleryTitleBarBorder = Ti.UI.createView({
+		backgroundColor: '#333',
+		height: 1,
+		top: galleryTitleBar.height + galleryTitleBar.top
+	});
+	
+	var galleryTitleBarLabel = Ti.UI.createLabel({
+		text: 'Project 3: Image Gallery',
+		bottom: 3,
+		align: 'center',
+	});
+	
+	galleryTitleBar.add(galleryTitleBarLabel);
+		
+	//return to menu button (goes in title bar)	
+	var closeButton = Ti.UI.createView({
+		bottom: 3,
+		right: 3,
+		borderWidth: 1,
+		backgroundColor: '#FFF',
+		height: 15,
+		width: 36
+	});
+	
+	var closeButtonLabel = Ti.UI.createLabel({
+		text: 'MENU',
+		align: 'center',
+		font: {fontSize: 10, fontFamily: "Helvetica", fontColor: "#000"},
+	});
+	
+	closeButton.add(closeButtonLabel);
+	
+	
+	//close gallery function
+	var closeGallery = function(){
+		galleryView.close();	
+	};
+
+	//close button event listener
+	closeButton.addEventListener("click", closeGallery);
+	
+	
+	
+	//build gallery
+	galleryTitleBar.add(closeButton);
+	
+	galleryView.add(galleryTitleBar, galleryTitleBarBorder);
+	galleryView.open();
+};
+
+
+//enter gallery event listener
+galleryButton.addEventListener("click", openGallery);
+
+
+
+

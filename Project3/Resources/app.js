@@ -1,64 +1,111 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+//Eric Pfister
+//VFA 1504 01
+//04-20-2015
 
 
-//
-// create base UI tab and root window
-//
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
-});
+Ti.UI.setBackgroundColor = '#000';
 
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
+var screenWidth = Ti.Platform.displayCaps.platformWidth;
+var screenHeight = Ti.Platform.displayCaps.platformHeight;
+var numRows = 4;
+var gap = 10;
+var imageCollectionFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
+var imageCollection = imageCollectionFolder.getDirectoryListing();
+var numImages = imageCollection.length;
+var realWidth = (screenWidth - (numRows + 1)*gap);
+var imageSize = realWidth / 3;
 
-win1.add(label1);
+console.log(imageCollection);
+console.log(numImages);
+console.log(imageSize);
+console.log(realWidth);
 
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
+var mainMenu = Ti.UI.createWindow({
+	backgroundColor: '#ddd'
 });
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+
+
+//titlebar
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: '#FFF',
+	height: 60,
+	top: 0
+});
+	
+var titleBarBorder = Ti.UI.createView({
+	backgroundColor: '#333',
+	height: 1,
+	top: titleBar.height + titleBar.top
 });
 
-win2.add(label2);
+var titleBarLabel = Ti.UI.createLabel({
+	text: 'Project 3: Image Gallery',
+	bottom: 3,
+	align: 'center',
+});
+
+titleBar.add(titleBarLabel);
 
 
 
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
+
+//menu
+
+var galleryButton = Ti.UI.createView({
+	top: titleBarBorder.top + 10,
+	borderWidth: 1,
+	borderRadius: 10,
+	backgroundColor: '#FFF',
+	height: 250,
+	width: screenWidth - 10
+});
+
+var enterGallery = Ti.UI.createLabel({
+	text: 'GALLERY',
+	align: 'center',
+	bottom: 10,
+	right: 10,
+	font: {fontSize: 36, fontFamily: "Helvetica"},
+});
+
+var aboutButton = Ti.UI.createView({
+	top: galleryButton.top + galleryButton.height + 10,
+	borderWidth: 1,
+	borderRadius: 10,
+	backgroundColor: '#FFF',
+	height: 250,
+	width: screenWidth - 10
+});
+
+var enterAbout = Ti.UI.createLabel({
+	text: 'ABOUT',
+	align: 'center',
+	top: 200,
+	right: 10,
+	font: {fontSize: 36, fontFamily: "Helvetica"},
+});
 
 
-// open tab group
-tabGroup.open();
+galleryButton.add(enterGallery);
+aboutButton.add(enterAbout);
+
+
+
+
+//load page
+var loadGalleryViewer = require('galleryViewer');
+
+
+mainMenu.add(titleBar, titleBarBorder, galleryButton, aboutButton);
+mainMenu.open();
+
+
+
+
+
+
+
+

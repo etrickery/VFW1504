@@ -1,0 +1,159 @@
+
+//Eric Pfister
+//VFA 1504 01
+//04-20-2015
+
+
+Ti.UI.setBackgroundColor = '#000';
+
+
+
+var mainMenu = Ti.UI.createWindow({
+	backgroundColor: '#ddd'
+});
+
+
+
+
+
+//titlebar
+
+var titleBar = Ti.UI.createView({
+	backgroundColor: '#FFF',
+	height: 60,
+	top: 0
+});
+	
+var titleBarBorder = Ti.UI.createView({
+	backgroundColor: '#333',
+	height: 1,
+	top: titleBar.height + titleBar.top
+});
+
+var titleBarLabel = Ti.UI.createLabel({
+	text: 'Project 3: Image Gallery',
+	bottom: 3,
+	align: 'center',
+});
+
+titleBar.add(titleBarLabel);
+
+
+
+
+
+//functions
+
+var openGallery = function(){
+	
+	var galleryView = Ti.UI.createWindow({
+		backgroundColor: '#CCC'
+	});
+	
+	var galleryTitleBar = Ti.UI.createView({
+		backgroundColor: '#FFF',
+		height: 60,
+		top: 0
+	});
+		
+	var galleryTitleBarBorder = Ti.UI.createView({
+		backgroundColor: '#333',
+		height: 1,
+		top: galleryTitleBar.height + galleryTitleBar.top
+	});
+	
+	var galleryTitleBarLabel = Ti.UI.createLabel({
+		text: 'Project 3: Image Gallery',
+		bottom: 3,
+		align: 'center',
+	});
+	
+	galleryTitleBar.add(galleryTitleBarLabel);
+		
+		
+	var closeButton = Ti.UI.createView({
+		bottom: 3,
+		right: 3,
+		borderWidth: 1,
+		backgroundColor: '#FFF',
+		height: 13,
+		width: 32
+	});
+	
+	var closeButtonLabel = Ti.UI.createLabel({
+		text: 'MENU',
+		align: 'center',
+		font: {fontSize: 10, fontFamily: "Helvetica", fontColor: "#000"},
+	});
+	
+	closeButton.add(closeButtonLabel);
+	
+	
+	var closeGallery = function(){
+		galleryView.close();	
+	};
+
+	closeButton.addEventListener("click", closeGallery);
+	
+	
+	galleryTitleBar.add(closeButton);
+	
+	galleryView.add(galleryTitleBar, galleryTitleBarBorder);
+	galleryView.open();
+};
+
+
+
+
+
+
+
+
+
+//menu
+
+var galleryButton = Ti.UI.createView({
+	top: '10%',
+	borderWidth: 1,
+	borderRadius: 10,
+	backgroundColor: '#FFF',
+	height: '30%',
+	width: '95%'
+});
+
+var enterGallery = Ti.UI.createLabel({
+	text: 'Gallery',
+	align: 'center',
+	top: '75%',
+	right: '5%',
+	font: {fontSize: 36, fontFamily: "Helvetica"},
+});
+
+galleryButton.add(enterGallery);
+
+
+
+
+
+//enter gallery event listener
+galleryButton.addEventListener("click", openGallery);
+
+
+
+
+
+
+//load page
+//var loadVehicles = require('vehicles');
+
+
+mainMenu.add(titleBar, titleBarBorder, galleryButton);
+mainMenu.open();
+
+
+
+
+
+
+
+
