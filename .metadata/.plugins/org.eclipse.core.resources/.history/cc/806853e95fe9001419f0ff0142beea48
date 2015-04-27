@@ -21,6 +21,7 @@ var mainMenu = Ti.UI.createWindow({
 	backgroundColor: '#ddd'
 });
 
+mainMenu.add(errorMsg);
 
 //titlebar
 
