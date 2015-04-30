@@ -1,0 +1,104 @@
+
+//VARIABLES
+
+
+
+
+
+//WINDOW VIEW
+var menuView = Ti.UI.createView({
+	height: displayHeight - 70,
+	width: displayWidth,
+	bottom: 0,
+	backgroundColor: '#FFF'
+});
+
+var menuViewBorder = Ti.UI.createView({
+	height: 1,
+	backgroundColor: '#000',
+	top: 0
+});
+
+
+
+
+
+
+
+//MENU
+
+		//LOGO
+				var logo = Ti.UI.createView({
+					
+				});
+
+		//GALLERY BUTTON
+	
+				var gallery = Ti.UI.createView({
+					backgroundColor: '#CCC',
+					top: logo.top + logo.height + 10,
+					right: 0,
+					width: displayWidth,
+					left: 20,
+					borderRadius: 10,
+					height: 70
+				});
+				
+				var galleryLabel = Ti.UI.createLabel({
+					text: 'GALLERY',
+					color: '#FFF',
+					font: {fontSize: 44, fontFamily: "Copperplate"},
+					bottom: 0,
+					left: 5
+				});
+				
+				gallery.add(galleryLabel);
+
+		//DATA BUTTON
+		
+				var bio = Ti.UI.createView({
+					backgroundColor: '#CCC',
+					top: gallery.top + gallery.height + 10,
+					right: 0,
+					width: displayWidth,
+					left: 20,
+					borderRadius: 10,
+					height: 70
+				});
+				
+				var bioLabel = Ti.UI.createLabel({
+					text: 'BIO',
+					color: '#FFF',
+					font: {fontSize: 44, fontFamily: "Copperplate"},
+					bottom: 0,
+					left: 5
+				});
+				
+				bio.add(bioLabel);
+	
+		//COMMUNICATOR BUTTON
+		
+				var communicator = Ti.UI.createView({
+					backgroundColor: '#CCC',
+					top: bio.top + bio.height + 10,
+					width: displayWidth,
+					left: 20,
+					borderRadius: 10,
+					height: 70
+				});
+				
+				var communicatorLabel = Ti.UI.createLabel({
+					text: 'COMM',
+					color: '#FFF',
+					font: {fontSize: 44, fontFamily: "Copperplate"},
+					bottom: 0,
+					left: 5
+				});
+				
+				communicator.add(communicatorLabel);
+
+
+
+//ADD MENU TO MAINWINDOW
+menuView.add(menuViewBorder, logo, gallery, bio, communicator);
+mainWindow.add(menuView);

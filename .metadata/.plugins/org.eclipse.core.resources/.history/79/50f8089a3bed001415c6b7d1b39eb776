@@ -1,0 +1,30 @@
+// Eric Pfister
+// VFA 1504 01
+// 04-27-15
+
+Ti.UI.setBackgroundColor = '#000';
+
+var pageTitle = 'Final Project';
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: '#CCC'
+});
+
+
+
+
+
+
+
+
+
+var loadTitleBar = require(titleBar);
+
+mainWindow.add(globalTitleBar);
+mainWindow.open();
+
+
+
+
+
+

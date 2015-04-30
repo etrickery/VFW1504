@@ -1,0 +1,4 @@
+dependencies: \
+  /Users/ericpfister/Documents/fullsail/VFW/VFW1504/Pfister_Eric_Project4/build/iphone/Classes/UIImage+RoundedCorner.m \
+  /Users/ericpfister/Documents/fullsail/VFW/VFW1504/Pfister_Eric_Project4/build/iphone/Classes/UIImage+RoundedCorner.h \
+  /Users/ericpfister/Documents/fullsail/VFW/VFW1504/Pfister_Eric_Project4/build/iphone/Classes/UIImage+Alpha.h

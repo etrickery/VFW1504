@@ -1,0 +1,21 @@
+//VARIABLES
+pageName = 'Gallery';
+
+
+
+
+//FUNCTIONS
+var galleryWindow = Ti.UI.createWindow({
+		backgroundColor: '#CCC'
+	});
+					
+
+
+
+
+galleryWindow.add(titleBarView);
+galleryWindow.open();
+
+
+
+

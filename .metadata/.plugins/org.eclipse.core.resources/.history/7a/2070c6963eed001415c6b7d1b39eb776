@@ -1,0 +1,13 @@
+
+
+
+var menuView = Ti.UI.createView({
+	height: displayHeight - 70,
+	width: displayWidth,
+	bottom: 0,
+	backgroundColor: '#FFF'
+});
+
+
+
+mainWindow.add(menuView);

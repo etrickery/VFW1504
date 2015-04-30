@@ -1,0 +1,15 @@
+
+pageName = 'Gallery';
+
+
+var galleryWindow = Ti.UI.createWindow({
+		backgroundColor: '#CCC'
+	});
+					
+
+
+
+galleryWindow.add(TitleBarView);
+galleryWindow.open();
+
+

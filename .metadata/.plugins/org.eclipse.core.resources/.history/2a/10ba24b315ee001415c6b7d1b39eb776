@@ -1,0 +1,5 @@
+var openBio = function(){
+					
+};
+			
+exports.showBio = openBio;

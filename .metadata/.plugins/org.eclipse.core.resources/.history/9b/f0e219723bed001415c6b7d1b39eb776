@@ -1,0 +1,17 @@
+//global title bar
+
+var titleBarView = Ti.UI.createView({
+	height: 60,
+	backgroundColor: '#FFF',
+	top: 0
+});
+
+var titleBarLabel = Ti.UI.createLabel({
+	text: pageTitle,
+	font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
+	bottom: 3
+});
+
+titleBarView.add(titleBarLabel);
+
+

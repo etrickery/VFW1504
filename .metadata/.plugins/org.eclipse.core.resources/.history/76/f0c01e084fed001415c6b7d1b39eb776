@@ -1,0 +1,22 @@
+//VARIABLES
+pageName = 'Gallery';
+var loadGalleryTitleView = require('titleView');
+
+
+
+
+//FUNCTIONS
+var galleryWindow = Ti.UI.createWindow({
+		backgroundColor: '#CCC'
+	});
+					
+
+
+
+
+//galleryWindow.add();
+galleryWindow.open();
+
+
+
+

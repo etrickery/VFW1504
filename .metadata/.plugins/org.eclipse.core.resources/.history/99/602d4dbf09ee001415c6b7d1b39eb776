@@ -1,0 +1,34 @@
+var titleBarViewFunction = function(){
+		var titleBarView = Ti.UI.createView({
+			height: 60,
+			backgroundColor: '#FFF',
+			top: 0
+		});
+		
+		var titleBarLabel = Ti.UI.createLabel({
+			text: pageName,
+			font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
+			bottom: 5
+		});
+		
+		var titleBarBorder = Ti.UI.createView({
+			height: 1,
+			backgroundColor: '#000',
+			bottom: 0
+		});
+		
+		titleBarView.add(titleBarLabel, titleBarBorder);
+		
+		if(pageName = 'Final Project'){
+			mainWindow.add(titleBarView);
+		}else if(pageName = 'Gallery'){
+					galleryWindow.add(titleBarView);
+				}else if(pageName = 'Bio'){
+							bioWindow.add(titleBarView);
+						}else if(pageName = 'Comm'){
+									commWindow.add(titleBarView);
+							};
+				
+};
+
+exports.titleView = titleBarViewFunction;

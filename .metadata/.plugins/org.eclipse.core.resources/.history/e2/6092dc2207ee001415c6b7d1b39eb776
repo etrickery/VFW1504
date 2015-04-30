@@ -1,0 +1,5 @@
+var openGallery = function(){
+						
+};
+
+exports.showGallery = openGallery;

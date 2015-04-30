@@ -1,0 +1,82 @@
+var openGallery = function(){
+		
+		pageName = 'Gallery';
+		
+		var closeGallery = function(){
+			galleryWindow.close();
+		};
+
+		
+		
+		
+		var galleryWindow =	Ti.UI.createWindow({
+			backgroundColor: '#CCC'
+		});
+		
+		var galleryTitleBarView = Ti.UI.createView({
+			height: 60,
+			backgroundColor: '#FFF',
+			top: 0
+		});
+		
+		var galleryTitleBarLabel = Ti.UI.createLabel({
+			text: pageName,
+			font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
+			bottom: 5
+		});
+		
+		var galleryTitleBarBorder = Ti.UI.createView({
+			height: 1,
+			backgroundColor: '#000',
+			bottom: 0
+		});
+		
+		galleryTitleBarView.add(galleryTitleBarLabel, galleryTitleBarBorder);
+		
+		
+		
+		
+		var galleryImageBackground = Ti.UI.createView({
+				backgroundColor: '#FFF',
+				width: displayWidth,
+				verticalAlign: 'center',
+				borderRadius: 10,
+				height: displayHeight - galleryTitleBarBorder.height - 125
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		var closeButton = Ti.UI.createView({
+				backgroundColor: '#FFF',
+				width: displayWidth / 4,
+				bottom: 5,
+				right: 5,
+				borderRadius: 10,
+				height: 20
+		});
+		
+		var closeButtonLabel = Ti.UI.createLabel({
+				text: 'close',
+				color: '#000',
+				font: {fontSize: 14, fontFamily: "Copperplate"},
+				verticalAlign: 'center',
+				align: 'center'
+		});
+		
+		closeButton.add(closeButtonLabel);
+		
+		closeButton.addEventListener('click', closeGallery);
+		
+		
+		
+		galleryWindow.add(galleryTitleBarView, closeButton, galleryImageBackground);
+		galleryWindow.open();			
+};
+
+exports.showGallery = openGallery;

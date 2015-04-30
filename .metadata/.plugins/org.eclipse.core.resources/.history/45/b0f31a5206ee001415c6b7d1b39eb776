@@ -1,0 +1,33 @@
+// Eric Pfister
+// VFA 1504 01
+// 04-27-15
+
+		Ti.UI.setBackgroundColor = '#000';
+
+
+
+//VARIABLES
+		
+		var displayWidth = Ti.Platform.displayCaps.platformWidth;
+		var displayHeight = Ti.Platform.displayCaps.platformHeight;
+		var pageName = 'Final Project';
+
+
+
+//MAIN WINDOW
+		
+		var mainWindow = Ti.UI.createWindow({
+			backgroundColor: '#CCC'
+		});
+
+		
+
+
+//BUILD
+		var loadTitleBar = require('titleBar');
+
+		var loadMainMenu = require('mainMenu');
+		
+		mainWindow.add(titleView.titleBar);
+		mainWindow.open();
+		

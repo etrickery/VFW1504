@@ -1,0 +1,8 @@
+
+pageName = 'Gallery';
+
+
+
+galleryWindow.add(TitleBarView);
+
+
