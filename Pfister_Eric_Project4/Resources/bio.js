@@ -1,3 +1,5 @@
+
+//OPEN BIO PAGE
 var openBio = function(){
 				
 				loadBioDetail = require('bioDetail');
@@ -58,7 +60,7 @@ var openBio = function(){
 				});
 				
 				
-				
+		//BUILD MENU		
 				for(z in loadBioDetail.bioObject){
 					console.log(z);
 					var bioName = Ti.UI.createTableViewRow({
@@ -84,7 +86,7 @@ var openBio = function(){
 				
 				
 				
-				
+		//MENU ACTION		
 				bioMenuTable.addEventListener('click', function(clickEvent){
 					clickNumber = clickEvent.source.title;
 					exports.clickNumber = clickNumber;
@@ -97,7 +99,7 @@ var openBio = function(){
 				
 				
 				
-				
+		//CLOSE BUTTON		
 				var closeButton = Ti.UI.createView({
 						backgroundColor: '#FFF',
 						width: displayWidth / 4,
@@ -140,7 +142,7 @@ var openBio = function(){
 };
 			
 
-
+//EXPORT DEFINITION
 exports.showBio = openBio;
 
 

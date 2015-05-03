@@ -1,12 +1,4 @@
 
-var test = function(){
-	
-};
-
-
-
-
-
 
 //WINDOW VIEW
 			var menuView = Ti.UI.createView({
@@ -21,10 +13,6 @@ var test = function(){
 				backgroundColor: '#000',
 				top: 0
 			});
-
-
-
-
 
 
 

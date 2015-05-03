@@ -1,6 +1,6 @@
 
 var openDetail = function(){
-		
+//BIO MENU		
 		var bioMenuPage = require('bio');
 		
 		
@@ -18,7 +18,7 @@ var openDetail = function(){
 		});
 		
 		
-		
+	//TITLE BAR		
 		var titleBarView = Ti.UI.createView({
 			height: 60,
 			backgroundColor: '#FFF',
@@ -41,7 +41,7 @@ var openDetail = function(){
 
 	
 	
-
+//IMAGE
 		var bioImage = Ti.UI.createImageView({
 						image: "images/" + character + ".jpg",
 						width: displayWidth,
@@ -49,13 +49,13 @@ var openDetail = function(){
 						align: 'center',
 						top: '10',
 		});
-		
+//IMAGE LABEL		
 		var bioImageLabel = Ti.UI.createLabel({
 			text: character,
 			font: {fontSize: 24, fontFamily: "Copperplate", fontColor: "#000"},
 			bottom: 80
 		});
-		
+	//SPY SCORE METER AND BIO DESCRIPTION LOOP THROUGH JSON OBJECT FOR VALUES
 		var spyScore;
 		var bioDescrip;
 		for(a in bioObject){
@@ -76,7 +76,7 @@ var openDetail = function(){
 			
 		};
 		
-		
+	//SKILL METER	
 		var bioImageDescrip = Ti.UI.createLabel({
 			text: bioDescrip,
 			width: displayWidth - 20,
@@ -124,7 +124,7 @@ var openDetail = function(){
 
 
 
-
+	
 
 		var bioImageBackground = Ti.UI.createView({
 				backgroundColor: '#FFF',
@@ -138,7 +138,7 @@ var openDetail = function(){
 		bioImageBackground.add(bioImage, bioImageLabel, bioImageDescrip, skillScoreRange);
 	
 	
-	
+	//CLOSE BUTTON
 	
 	
 	

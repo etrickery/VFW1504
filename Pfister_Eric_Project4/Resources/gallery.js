@@ -3,14 +3,14 @@
 				
 		
 				
-				//VARIABLE
+		//VARIABLE
 				pageName = 'Gallery';
 				var images = ["beth", "carl", "ed", "jarred", "julia", "pete"];
 				var selectedImage = 'beth';
 				var y = 0;
 				var x = 0;
 				
-				//CLOSE WINDOW FUNCTION
+		//CLOSE WINDOW FUNCTION
 				var closeGallery = function(){
 					galleryWindow.close();
 				};
@@ -19,7 +19,7 @@
 
 
 
-				
+		//TITLE BAR		
 				var galleryWindow =	Ti.UI.createWindow({
 					backgroundColor: '#CCC'
 				});
@@ -50,7 +50,7 @@
 				
 				
 				
-				
+		//DISPLAY IMAGE		
 				var galleryImage = Ti.UI.createImageView({
 						image: "images/beth.jpg",
 						width: displayWidth,
@@ -81,7 +81,7 @@
 				
 			
 			
-			
+		//RANDOM BUTTON	
 				var randomImageButton = Ti.UI.createView({
 						backgroundColor: '#FFF',
 						width: displayWidth / 3,
@@ -100,21 +100,11 @@
 				});
 			
 				
-				
+		//VARIABLES USED TO CALCULATE		
 				var currentImageText;
 				var currentImage;
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+		//RANDOM GENERATOR
 				randomImageButton.add(randomImageButtonLabel);
 				randomImageButton.addEventListener('click', function(){
 					while(x === y){
@@ -134,7 +124,7 @@
 				
 				
 				
-				
+		//CLOSE BUTTON		
 				var closeButton = Ti.UI.createView({
 						backgroundColor: '#FFF',
 						width: displayWidth / 4,
@@ -157,7 +147,7 @@
 				closeButton.addEventListener('click', closeGallery);
 				
 				
-				
+	//MAIN LOADING			
 				galleryWindow.add(randomImageButton, galleryTitleBarView, closeButton, galleryImageBackground);
 				galleryWindow.open();	
 				

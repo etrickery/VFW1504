@@ -3,7 +3,7 @@ var openComm = function(){
 				var closeComm = function(){
 					commWindow.close();
 				};
-			//COMM PAGE - SIMPLE POSTING MECHANISM	
+				
 				
 				pageName = "Comm";
 							
@@ -45,7 +45,7 @@ var openComm = function(){
 				var createSentText = Ti.UI.createLabel({
 						wordWrap: true,
 						width: displayWidth - 25,
-						text: '$40 Red Jack Miller Jackrabbits [Indianapolis] - for sale by owner',
+						text: 'No Messages',
 						font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
 						top: 10,
 						align: 'center'
