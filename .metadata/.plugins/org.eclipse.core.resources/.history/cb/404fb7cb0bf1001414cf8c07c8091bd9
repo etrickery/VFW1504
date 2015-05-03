@@ -1,0 +1,100 @@
+var openBio = function(){
+				
+				var closeBio = function(){
+					bioWindow.close();
+				};
+				
+				
+				pageName = "Bio Menu";
+							
+				var bioMenuWindow =	Ti.UI.createWindow({
+					backgroundColor: '#CCC'
+				});
+				
+				var bioMenuTitleBarView = Ti.UI.createView({
+					height: 60,
+					backgroundColor: '#FFF',
+					top: 0
+				});
+				
+				var bioMenuTitleBarLabel = Ti.UI.createLabel({
+					text: pageName,
+					font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
+					bottom: 5
+				});
+				
+				var bioMenuTitleBarBorder = Ti.UI.createView({
+					height: 1,
+					backgroundColor: '#000',
+					bottom: 0
+				});
+				
+				bioMenuTitleBarView.add(bioMenuTitleBarLabel, bioMenuTitleBarBorder);
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				var closeButton = Ti.UI.createView({
+						backgroundColor: '#FFF',
+						width: displayWidth / 4,
+						bottom: 5,
+						right: 5,
+						borderRadius: 10,
+						height: 20
+				});
+				
+				var closeButtonLabel = Ti.UI.createLabel({
+						text: 'close',
+						color: '#000',
+						font: {fontSize: 14, fontFamily: "Copperplate"},
+						verticalAlign: 'center',
+						align: 'center'
+				});
+				
+				closeButton.add(closeButtonLabel);
+				
+				
+				
+				
+				
+				
+				
+				
+				closeButton.addEventListener('click', closebio);
+				
+				
+				
+				
+				
+				
+				
+				bioMenuWindow.add(bioMenuTitleBarView, closeButton);
+				bioMenuWindow.open();	
+
+			
+					
+};
+			
+
+
+exports.showBio = openBio;
+
+
+
+
+
+
+			
+
+
+
+
+			
+			
+	

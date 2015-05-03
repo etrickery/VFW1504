@@ -3,24 +3,22 @@
 				
 		
 				
-				//PAGE TITLE VARIABLE
+				//VARIABLE
 				pageName = 'Gallery';
-				
+				var images = ["beth", "carl", "ed", "jarred", "julia", "pete"];
+				var selectedImage = 'beth';
+				var y = 0;
+				var x = 0;
 				
 				//CLOSE WINDOW FUNCTION
 				var closeGallery = function(){
 					galleryWindow.close();
 				};
-		
-				//SELECT A NEW IMAGE
-				var randomImage = function(){
-					
-				};
+
 				
-				
-				
-				
-				
+
+
+
 				
 				var galleryWindow =	Ti.UI.createWindow({
 					backgroundColor: '#CCC'
@@ -49,6 +47,25 @@
 				
 				
 				
+				
+				
+				
+				
+				var galleryImage = Ti.UI.createImageView({
+						image: "images/beth.jpg",
+						width: displayWidth,
+						title: "beth",
+						verticalAlign: 'center'
+				});
+				
+				var galleryImageLabel = Ti.UI.createLabel({
+						text: 'beth',
+						font: {fontSize: 44, fontFamily: "Copperplate", fontColor: "#000"},
+						bottom: 20
+
+						
+				});
+				
 				var galleryImageBackground = Ti.UI.createView({
 						backgroundColor: '#FFF',
 						width: displayWidth,
@@ -57,14 +74,11 @@
 						height: displayHeight - galleryTitleBarBorder.height - 140
 				});
 			
-				var galleryImage = Ti.UI.createImageView({
-						image: "images/" + imageTitle,
-						width: screenWidth,
-						title: imageTitle,
-						verticalAlign: 'center'
-				});
+				galleryImageBackground.add(galleryImage, galleryImageLabel);
+				//galleryBio.randomImage();
+
 			
-			
+				
 			
 			
 			
@@ -84,10 +98,38 @@
 						verticalAlign: 'center',
 						align: 'center'
 				});
+			
+				
+				
+				var currentImageText;
+				var currentImage;
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				randomImageButton.add(randomImageButtonLabel);
-				randomImageButton.addEventHandler('click', randomImage);	
-			
+				randomImageButton.addEventListener('click', function(){
+					while(x === y){
+						x = Math.round(Math.random() * 5);
+					};	
+					selectedImage = images[x];
+					y = x;
+					galleryImage.image = "images/" + selectedImage + ".jpg";
+					galleryImageLabel.text = selectedImage;
+					
+				});
+				
+				
+				
+				
 				
 				
 				
@@ -114,17 +156,19 @@
 				
 				closeButton.addEventListener('click', closeGallery);
 				
-				var galleryBio = require('bio');
+				
 				
 				galleryWindow.add(randomImageButton, galleryTitleBarView, closeButton, galleryImageBackground);
-				galleryWindow.open();			
+				galleryWindow.open();	
+				
+				exports.galleryWindow = galleryWindow;
+		
 		};
 
 
 
 //EXPORT OPEN GALLERY FUNCTION
 		exports.showGallery = openGallery;
-
 
 
 

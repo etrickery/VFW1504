@@ -1,0 +1,193 @@
+
+var openDetail = function(){
+	
+		
+		var closeBioDetail = function(){
+				detailWindow.close();
+		};
+	
+	
+		bioMenuPage = require('bio');
+	
+		pageName = bioMenuPage.clickNumber + "'s bio";
+	
+		var detailWindow = Ti.UI.createWindow({
+			backgroundColor: '#CCC'
+		});
+		
+		
+		
+		var titleBarView = Ti.UI.createView({
+			height: 60,
+			backgroundColor: '#FFF',
+			top: 0
+		});
+		
+		var titleBarLabel = Ti.UI.createLabel({
+			text: pageName,
+			font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
+			bottom: 5
+		});
+		
+		var titleBarBorder = Ti.UI.createView({
+			height: 1,
+			backgroundColor: '#000',
+			bottom: 0
+		});
+		
+		titleBarView.add(titleBarLabel, titleBarBorder);
+
+	
+	
+
+
+
+
+		var bioImageBackground = Ti.UI.createView({
+				backgroundColor: '#FFF',
+				width: displayWidth,
+				verticalAlign: 'center',
+				borderRadius: 10,
+				height: displayHeight - TitleBarBorder.height - 140
+		});	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		var closeButton = Ti.UI.createView({
+				backgroundColor: '#FFF',
+				width: displayWidth / 4,
+				bottom: 5,
+				right: 5,
+				borderRadius: 10,
+				height: 20
+		});
+		
+		var closeButtonLabel = Ti.UI.createLabel({
+				text: 'close',
+				color: '#000',
+				font: {fontSize: 14, fontFamily: "Copperplate"},
+				verticalAlign: 'center',
+				align: 'center'
+		});
+		
+		closeButton.add(closeButtonLabel);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		closeButton.addEventListener('click', closeBioDetail);
+		
+		
+	
+	
+	
+
+	
+		detailWindow.add(titleBarView, closeButton, bioImageBackground);
+		detailWindow.open();
+		
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var bioObject = {
+	"beth": {
+		"title": "Beth",
+		"footer": "33",
+		"details": 
+				[
+					{"description": "Beth is the most dangerous and yet most beneficial contact in your dossier. Her resources and skills are unmatched, and She is ready at any instant to provide maximum information regarding your ex."}
+				]
+	},
+	
+	"carl": {
+		"title": "Carl",
+		"footer": "44",
+		"details": 
+				[
+					{"description": "There are no details on Carl."}
+				]
+	},
+	
+	
+	"ed": {
+		"title": "Ed",
+		"footer": "22",
+		"details": 
+				[
+					{"description": "Ed's natural ability to coexist with lizards makes him your optimal choice for outdoor activities."}
+				]
+	},
+	
+	
+	"jarred": {
+		"title": "Jarred",
+		"footer": "33",
+		"details": 
+				[
+					{"description": "Jarred is a teenager with a knack for climbing. He will be your first contact when you are dealing with trees or large rocks."}
+				]
+	},
+	
+	
+	"julia": {
+		"title": "Julia",
+		"footer": "55",
+		"details": 
+				[
+					{"description": "The most comprehensive training available and relentless dedication make Julia one of the most advanced allies in your endeavors."}
+				]
+	},
+	
+	
+	"pete": {
+		"title": "Pete",
+		"footer": "11",
+		"details": 
+				[
+					{"description": "Pete is a giraffe."}
+				]
+	}
+	
+	
+};
+
+
+exports.bioObject = bioObject;
+exports.openDetail = openDetail;

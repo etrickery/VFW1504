@@ -1,0 +1,72 @@
+var bioObject = {
+	"beth": {
+		"title": "Beth",
+		"footer": "33",
+		"details": 
+				[
+					{"description": "Beth is the most dangerous and yet most beneficial contact in your dossier. Her resources and skills are unmatched, and She is ready at any instant to provide maximum information regarding your ex."}
+				]
+	},
+	
+	"carl": {
+		"title": "Carl",
+		"footer": "44",
+		"details": 
+				[
+					{"description": "There are no details on Carl."}
+				]
+	},
+	
+	
+	"ed": {
+		"title": "Ed",
+		"footer": "22",
+		"details": 
+				[
+					{"description": "Ed's natural ability to coexist with lizards makes him your optimal choice for outdoor activities."}
+				]
+	},
+	
+	
+	"jarred": {
+		"title": "Jarred",
+		"footer": "33",
+		"details": 
+				[
+					{"description": "Jarred is a teenager with a knack for climbing. He will be your first contact when you are dealing with trees or large rocks."}
+				]
+	},
+	
+	
+	"julia": {
+		"title": "Julia",
+		"footer": "55",
+		"details": 
+				[
+					{"description": "The most comprehensive training available and relentless dedication make Julia one of the most advanced allies in your endeavors."}
+				]
+	},
+	
+	
+	"pete": {
+		"title": "Pete",
+		"footer": "11",
+		"details": 
+				[
+					{"description": "Pete is a giraffe."}
+				]
+	}
+	
+	
+};
+
+
+var x = Math.random(0, 5);
+
+
+console.log("bioObject - " + bioObject);
+console.log("bioObject[x] - " + bioObject[x]);
+console.log("bioObject[x].title - " + bioObject[x].title);
+console.log("bioObject[x].footer - " + bioObject[x].footer);
+console.log("bioObject[x].details - " + bioObject[x].details);
+

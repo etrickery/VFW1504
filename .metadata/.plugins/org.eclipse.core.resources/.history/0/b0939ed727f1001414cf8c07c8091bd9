@@ -1,0 +1,44 @@
+var openComm = function(){
+		
+				var closeComm = function(){
+					commWindow.close();
+				};
+				
+				
+				pageName = "Comm";
+							
+				var commWindow =	Ti.UI.createWindow({
+					backgroundColor: '#CCC'
+				});
+				
+				var commTitleBarView = Ti.UI.createView({
+					height: 60,
+					backgroundColor: '#FFF',
+					top: 0
+				});
+				
+				var commTitleBarLabel = Ti.UI.createLabel({
+					text: pageName,
+					font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
+					bottom: 5
+				});
+				
+				var commTitleBarBorder = Ti.UI.createView({
+					height: 1,
+					backgroundColor: '#000',
+					bottom: 0
+				});
+				
+				commTitleBarView.add(commTitleBarLabel, commTitleBarBorder);
+					
+};
+
+exports.showComm = openComm;
+
+
+
+
+
+
+
+	

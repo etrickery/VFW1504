@@ -1,0 +1,136 @@
+
+
+
+//JSON
+var bioObject = {
+	"beth": {
+		"title": "beth",
+		"spyScore": "33",
+		"details": 
+				[
+					
+				]
+	},
+	
+	"carl": {
+		"title": "carl",
+		"spyScore": "44",
+		"details": 
+				[
+					{"description": "desc one."}
+				]
+	},
+	
+	
+	"ed": {
+		"title": "ed",
+		"spyScore": "22",
+		"details": 
+				[
+					{"description": "desc two."}
+				]
+	},
+	
+	
+	"jarred": {
+		"title": "jarred",
+		"spyScore": "33",
+		"details": 
+				[
+					{"description": "desc three."}
+				]
+	},
+	
+	
+	"julia": {
+		"title": "julia",
+		"spyScore": "55",
+		"details": 
+				[
+					{"description": "desc one."}
+				]
+	},
+	
+	
+	"pete": {
+		"title": "pete",
+		"spyScore": "11",
+		"details": 
+				[
+					{"description": "desc four."}
+				]
+	}
+	
+	
+};
+
+
+var currentImage;
+//get image title function
+var getImageTitle = function(){
+		var i = 0;
+		while(currentImage === x){
+				var x = Math.round(Math.random() * 6);
+			}
+		console.log("x = " + x);
+		for(z in bioObject){
+			i++;
+			if(i === x){
+				console.log("i = " + i);
+				console.log("z = " + z);
+				currentImage = i;
+				
+			};
+		}
+};
+
+
+
+
+
+
+
+
+
+var bioWindow = Ti.UI.createWindow({
+	backgroundColor: '#000'
+});
+
+
+var imageView = Ti.UI.createView({
+	backgroundColor: '#FFF'
+});
+
+var e;
+getImageTitle();
+
+var imageViewLabel = Ti.UI.createLabel({
+	text: 'beth',
+	font: {fontSize: '18'}
+});
+
+imageView.add(imageViewLabel);
+
+
+
+imageViewLabel.addEventListener('click', getImageTitle);
+
+
+
+
+
+
+bioWindow.add(imageView);
+bioWindow.open();
+
+
+
+
+
+
+
+
+
+
+
+

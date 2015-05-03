@@ -1,25 +1,158 @@
 var openBio = function(){
+				
+				loadBioDetail = require('bioDetail');
+				
+				var closeBio = function(){
+					bioMenuWindow.close();
+				};
+				
+				
+				pageName = "Bio Menu";
+							
+				var bioMenuWindow =	Ti.UI.createWindow({
+					backgroundColor: '#CCC'
+				});
+				
+				var bioMenuTitleBarView = Ti.UI.createView({
+					height: 60,
+					backgroundColor: '#FFF',
+					top: 0
+				});
+				
+				var bioMenuTitleBarLabel = Ti.UI.createLabel({
+					text: pageName,
+					font: {fontSize: 14, fontFamily: "Copperplate", fontColor: "#000"},
+					bottom: 5
+				});
+				
+				var bioMenuTitleBarBorder = Ti.UI.createView({
+					height: 1,
+					backgroundColor: '#000',
+					bottom: 0
+				});
+				
+				bioMenuTitleBarView.add(bioMenuTitleBarLabel, bioMenuTitleBarBorder);
 			
-			
-			
-			
+				
+				
+				
+				
+				
+				
+				
+				var bioMenuTable = Ti.UI.createTableView({
+					backgroundColor: '#FFF',
+					height: displayHeight / 2,
+					width: displayWidth,
+					verticalAlign: 'center'
+				});
+				
+				if(Ti.Platform.name === "iPhone OS"){
+					bioMenuTable.style = Ti.UI.iPhone.TableViewStyle.GROUPED;	
+				};
+				
+				
+				var bioMenuTableSection = Ti.UI.createTableViewSection({
+					headerTitle: "Select a character",
+					footerTitle: ""
+				});
+				
+				
+				
+				for(z in loadBioDetail.bioObject){
+					console.log(z);
+					var bioName = Ti.UI.createTableViewRow({
+						title: z,
+						hasChild: true,
+						
+					});
+					
+					if(Ti.Platform.name === "iPhone OS"){
+								bioName.hasChild = false;
+								bioName.hasDetail = true;
+					};
+					bioMenuTableSection.add(bioName);
+
+				};
+				
+				
+				var sections = [bioMenuTableSection];
+				bioMenuTable.setData(sections);
+				
+				
+				
+				
+				
+				
+				
+				bioMenuTable.addEventListener('click', function(clickEvent){
+					clickNumber = clickEvent.source.title;
+					exports.clickNumber = clickNumber;
+					loadBioDetail.openDetail();
+				});
+				
+				
+				
+				
+				
+				
+				
+				
+				var closeButton = Ti.UI.createView({
+						backgroundColor: '#FFF',
+						width: displayWidth / 4,
+						bottom: 5,
+						right: 5,
+						borderRadius: 10,
+						height: 20
+				});
+				
+				var closeButtonLabel = Ti.UI.createLabel({
+						text: 'close',
+						color: '#000',
+						font: {fontSize: 14, fontFamily: "Copperplate"},
+						verticalAlign: 'center',
+						align: 'center'
+				});
+				
+				closeButton.add(closeButtonLabel);
+				
+				
+				
+				
+				
+				
+				
+				
+				closeButton.addEventListener('click', closeBio);
+				
+				
+				
+				
+				
+				
+				
+				bioMenuWindow.add(bioMenuTitleBarView, closeButton, bioMenuTable);
+				bioMenuWindow.open();	
+
 			
 					
 };
 			
-			
-var bioObject = {"contacts":[
-								{"title": "beth", "spyscore": "3", "description": "Beth is the most dangerous and yet most beneficial contact in your dossier. Her resources and skills are unmatched, and She is ready at any instant to provide maximum information regarding your ex."},
-								{"title": "carl", "spyscore": "4", "description": "There are no details on the nature of Carl."},
-								{"title": "ed", "spyscore": "2", "description": "Ed's natural ability to coexist with lizards makes him your optimal choice for outdoor activities."},
-								{"title": "jarred", "spyscore": "3", "description": "Jarred is a teenager with a knack for climbing. He will be your first contact when you are dealing with trees or large rocks."},
-								{"title": "julia", "spyscore": "5", "description": "The most comprehensive training available and relentless dedication make Julia one of the most advanced allies in your endeavors."},
-								{"title": "pete", "spyscore": "1", "description": "Pete is a giraffe."} 
-							]
-};							
-			
-			
-			
-exports.showBio = openBio;
-exports.json = bioObject;
 
+
+exports.showBio = openBio;
+
+
+
+
+
+
+			
+
+
+
+
+			
+			
+	

@@ -1,0 +1,137 @@
+
+
+
+//JSON
+var bioObject = {
+	"beth": {
+		"title": "beth",
+		"footer": "33",
+		"details": 
+				[
+					{"description": "Beth is the most dangerous and yet most beneficial contact in your dossier. Her resources and skills are unmatched, and She is ready at any instant to provide maximum information regarding your ex."}
+				]
+	},
+	
+	"carl": {
+		"title": "carl",
+		"footer": "44",
+		"details": 
+				[
+					{"description": "There are no details on Carl."}
+				]
+	},
+	
+	
+	"ed": {
+		"title": "ed",
+		"footer": "22",
+		"details": 
+				[
+					{"description": "Ed's natural ability to coexist with lizards makes him your optimal choice for outdoor activities."}
+				]
+	},
+	
+	
+	"jarred": {
+		"title": "jarred",
+		"footer": "33",
+		"details": 
+				[
+					{"description": "Jarred is a teenager with a knack for climbing. He will be your first contact when you are dealing with trees or large rocks."}
+				]
+	},
+	
+	
+	"julia": {
+		"title": "julia",
+		"footer": "55",
+		"details": 
+				[
+					{"description": "The most comprehensive training available and relentless dedication make Julia one of the most advanced allies in your endeavors."}
+				]
+	},
+	
+	
+	"pete": {
+		"title": "pete",
+		"footer": "11",
+		"details": 
+				[
+					{"description": "Pete is a giraffe."}
+				]
+	}
+	
+	
+};
+
+
+
+
+//get image title function
+var getImageTitle = function(){
+		var x = Math.round(Math.random() * 6);
+		console.log("x = " + x);
+		console.log("x of bioObject = " + bioObject[x]);
+		for(z in bioObject){
+				for(q=0; q<bioObject[z].length; q++){
+						if(q === x){
+							console.log(bioObject[q]);
+						
+							//imageView.remove(imageViewLabel);
+							//imageViewLabel.text = z;	
+							//imageView.add(imageViewLabel);
+						}
+				}
+			}
+		};
+};
+
+
+
+
+
+
+
+
+var bioWindow = Ti.UI.createWindow({
+	backgroundColor: '#000'
+});
+
+
+var imageView = Ti.UI.createView({
+	backgroundColor: '#FFF'
+});
+
+var e;
+getImageTitle();
+
+var imageViewLabel = Ti.UI.createLabel({
+	text: 'beth',
+	font: {fontSize: '18'}
+});
+
+imageView.add(imageViewLabel);
+
+
+
+imageViewLabel.addEventListener('click', getImageTitle);
+
+
+
+
+
+
+bioWindow.add(imageView);
+bioWindow.open();
+
+
+
+
+
+
+
+
+
+
+
+
